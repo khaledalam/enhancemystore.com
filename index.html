@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Orders Analytics for BigCommerce · EnhanceMyStore</title>
-<meta name="description" content="Orders Analytics gives BigCommerce merchants a fast analytics dashboard for orders, profits, customers and locations, plus public order tracking, follow-up dates, internal notes and one-click exports. 7-day free trial, no credit card.">
+<meta name="description" content="Orders Analytics is a BigCommerce app for order analytics: profit reports, an order tracking page, filters, maps and one-click exports. 7-day free trial.">
 <link rel="canonical" href="https://www.enhancemystore.com/">
 <meta name="theme-color" content="#0b5cff">
 <meta property="og:type" content="website">
@@ -139,117 +139,7 @@
  ]
 }
 </script>
-<style>
-:root{
-  --bg:#ffffff; --bg-soft:#f5f7fb; --card:#ffffff; --text:#0e1726; --muted:#56637a; --line:#e3e8f1;
-  --brand:#0b5cff; --brand-ink:#ffffff; --brand-soft:#e8f0ff; --accent:#00b37e; --warn:#f5a623;
-  --shadow:0 1px 2px rgba(14,23,38,.06),0 8px 24px rgba(14,23,38,.08); --radius:14px;
-}
-@media (prefers-color-scheme: dark){
-  :root{
-    --bg:#0b1020; --bg-soft:#111830; --card:#141c36; --text:#e8edf7; --muted:#9aa6bf; --line:#232d4d;
-    --brand:#4d8bff; --brand-ink:#0b1020; --brand-soft:#16244a; --accent:#2fd39b; --warn:#ffbe4d;
-    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.35);
-  }
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Inter,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
-a{color:var(--brand);text-decoration:none}
-a:hover{text-decoration:underline}
-.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
-header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
-.logo{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--text);letter-spacing:-.01em}
-.logo:hover{text-decoration:none}
-.logo svg{width:28px;height:28px}
-.nav nav{display:flex;gap:22px;font-size:15px}
-.nav nav a{color:var(--muted)}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:10px;font-weight:600;font-size:15px;border:1px solid transparent;transition:transform .15s,box-shadow .15s,background .15s}
-.btn:hover{text-decoration:none;transform:translateY(-1px)}
-.btn-primary{background:var(--brand);color:var(--brand-ink);box-shadow:0 6px 18px color-mix(in srgb,var(--brand) 35%,transparent)}
-.btn-ghost{border-color:var(--line);color:var(--text);background:var(--card)}
-.btn-sm{padding:8px 14px;font-size:14px}
-.hero{padding:72px 0 56px;background:radial-gradient(1200px 400px at 70% -10%,var(--brand-soft),transparent 70%)}
-.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--brand);background:var(--brand-soft);padding:6px 12px;border-radius:999px}
-h1{font-size:clamp(34px,5vw,54px);line-height:1.08;letter-spacing:-.025em;margin:18px 0 16px}
-h1 span{color:var(--brand)}
-.lead{font-size:19px;color:var(--muted);max-width:34em;margin:0 0 28px}
-.cta{display:flex;gap:12px;flex-wrap:wrap}
-.trust{display:flex;gap:18px;flex-wrap:wrap;margin-top:22px;color:var(--muted);font-size:14px}
-.trust b{color:var(--text)}
-.check{color:var(--accent);font-weight:700}
-/* dashboard illustration */
-.mock{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:18px;transform:perspective(1200px) rotateY(-4deg) rotateX(2deg)}
-.mock-top{display:flex;gap:6px;margin-bottom:14px}
-.mock-top i{width:10px;height:10px;border-radius:50%;background:var(--line)}
-.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
-.kpi{background:var(--bg-soft);border-radius:10px;padding:10px 12px}
-.kpi small{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
-.kpi strong{font-size:18px}
-.kpi em{font-style:normal;font-size:12px;color:var(--accent);margin-left:4px}
-.chart{background:var(--bg-soft);border-radius:10px;padding:12px}
-.chart svg{display:block;width:100%;height:auto}
-.rows{margin-top:12px;display:grid;gap:6px}
-.row{display:grid;grid-template-columns:1.2fr .8fr .6fr;gap:8px;font-size:12px;background:var(--bg-soft);border-radius:8px;padding:8px 10px;color:var(--muted)}
-.row b{color:var(--text);font-weight:600}
-.tag{justify-self:end;padding:1px 8px;border-radius:999px;font-size:11px;font-weight:600}
-.tag.ok{background:color-mix(in srgb,var(--accent) 18%,transparent);color:var(--accent)}
-.tag.wait{background:color-mix(in srgb,var(--warn) 20%,transparent);color:var(--warn)}
-section{padding:72px 0}
-.soft{background:var(--bg-soft)}
-.h2{font-size:clamp(28px,3.4vw,38px);letter-spacing:-.02em;line-height:1.15;margin:0 0 12px;text-align:center}
-.sub{color:var(--muted);text-align:center;max-width:40em;margin:0 auto 44px;font-size:17px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow)}
-.card h3{margin:14px 0 6px;font-size:18px;letter-spacing:-.01em}
-.card p{margin:0;color:var(--muted);font-size:15px}
-.ico{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;background:var(--brand-soft);color:var(--brand)}
-.ico svg{width:22px;height:22px}
-.split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-.list{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:12px}
-.list li{display:flex;gap:10px;align-items:flex-start}
-.list li::before{content:"✓";flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:700;background:color-mix(in srgb,var(--accent) 18%,transparent);color:var(--accent);margin-top:2px}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:s}
-.step{position:relative;padding-top:56px}
-.step::before{counter-increment:s;content:counter(s);position:absolute;top:0;left:24px;width:40px;height:40px;border-radius:50%;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font-weight:700;margin-top:24px}
-.video{position:relative;aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:#000}
-.video a{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(135deg,#0b5cff,#6a3dff);color:#fff;font-weight:600}
-.video a:hover{text-decoration:none}
-.play{width:74px;height:74px;border-radius:50%;background:rgba(255,255,255,.18);display:grid;place-items:center;margin:0 auto 12px;backdrop-filter:blur(4px)}
-.play svg{width:28px;height:28px;margin-left:4px}
-.faq{max-width:780px;margin:0 auto;display:grid;gap:10px}
-details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px}
-summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";color:var(--muted);font-weight:400;font-size:20px;line-height:1}
-details[open] summary::after{content:"–"}
-details p{color:var(--muted);margin:10px 0 0}
-.final{text-align:center;background:linear-gradient(135deg,var(--brand),#6a3dff);color:#fff;border-radius:22px;padding:56px 24px}
-.final h2{margin:0 0 10px;font-size:clamp(26px,3.2vw,36px);letter-spacing:-.02em}
-.final p{margin:0 0 26px;opacity:.9}
-.final .btn-primary{background:#fff;color:#0b1020;box-shadow:none}
-.final .btn-ghost{background:transparent;border-color:rgba(255,255,255,.5);color:#fff}
-footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
-.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
-.foot nav{display:flex;gap:18px;flex-wrap:wrap}
-.foot a{color:var(--muted)}
-@media (max-width:900px){
-  .hero-grid,.split{grid-template-columns:1fr}
-  .grid,.steps{grid-template-columns:1fr 1fr}
-  .mock{transform:none}
-  .nav nav{display:none}
-}
-@media (max-width:600px){
-  .grid,.steps{grid-template-columns:1fr}
-  .hero{padding-top:48px}
-  section{padding:56px 0}
-  .kpis{grid-template-columns:1fr 1fr}
-  .kpi:last-child{display:none}
-}
-@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
-</style>
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
 
@@ -260,10 +150,11 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
       EnhanceMyStore
     </a>
     <nav aria-label="Main">
-      <a href="#features">Features</a>
-      <a href="#tracking">Order tracking</a>
-      <a href="#how">How it works</a>
-      <a href="#faq">FAQ</a>
+      <a href="/bigcommerce-order-analytics/">Analytics</a>
+      <a href="/bigcommerce-order-tracking/">Order tracking</a>
+      <a href="/bigcommerce-profit-report/">Profit report</a>
+      <a href="/export-bigcommerce-orders/">Export</a>
+      <a href="/#faq">FAQ</a>
     </nav>
     <a class="btn btn-primary btn-sm" href="https://www.bigcommerce.com/apps/orders-analytics/" rel="noopener">Install free</a>
   </div>
@@ -407,6 +298,14 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
     </div>
   </section>
 
+  <section id="explore">
+    <div class="wrap">
+      <h2 class="h2">Explore Orders Analytics</h2>
+      <p class="sub">Guides to what the app does for BigCommerce stores, one topic at a time.</p>
+      <div class="topics"><a href="/bigcommerce-order-analytics/"><strong>Order analytics</strong><span>Dashboard, filters, map and search</span></a><a href="/bigcommerce-order-tracking/"><strong>Order tracking page</strong><span>Tracking numbers and status notes</span></a><a href="/bigcommerce-profit-report/"><strong>Profit report</strong><span>Revenue, discounts, shipping, refunds, taxes</span></a><a href="/export-bigcommerce-orders/"><strong>Export orders</strong><span>CSV, Excel (XLSX), JSON and XML</span></a></div>
+    </div>
+  </section>
+
   <section id="faq">
     <div class="wrap">
       <h2 class="h2">Frequently asked questions</h2>
@@ -441,6 +340,9 @@ footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-s
 <footer>
   <div class="wrap foot">
     <span>© <span id="y">2026</span> EnhanceMyStore</span>
+    <nav aria-label="Product">
+      <a href="/bigcommerce-order-analytics/">Order analytics</a><a href="/bigcommerce-order-tracking/">Order tracking page</a><a href="/bigcommerce-profit-report/">Profit report</a><a href="/export-bigcommerce-orders/">Export orders</a>
+    </nav>
     <nav aria-label="Footer">
       <a href="https://orders-analytics.enhancemystore.com/">App sign-in</a>
       <a href="https://orders-analytics.enhancemystore.com/support">Support</a>
